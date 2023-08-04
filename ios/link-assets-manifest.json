@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/OFL.txt",
+      "sha1": "65f077d0aa603b64873b450999f9767e7cb92875"
+    },
+    {
+      "path": "src/assets/fonts/PTSansCaption-Bold.ttf",
+      "sha1": "dc2f85bcefc1805fa4e5ca9390ad76d110fa92a4"
+    },
+    {
+      "path": "src/assets/fonts/PTSansCaption-Regular.ttf",
+      "sha1": "16591fc0e814fc1e2033e982e49f189a5bb49824"
+    }
+  ]
+}

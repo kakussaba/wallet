@@ -10,7 +10,7 @@ export const ContainerButton = styled.TouchableOpacity<ContainerButtonProps>`
   align-self: center;
   background-color: ${props => props.color};
   height: 55px;
-  width: 300px;
+  width: 100%;
   border-radius: 12px;
   margin: 10px 14px;
 `;

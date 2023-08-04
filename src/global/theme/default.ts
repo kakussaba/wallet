@@ -27,5 +27,8 @@ export default {
 
     WHITE: '#FFFFFF',
     BLUE_DARK: '#142995',
+    BLUE_LIGHT: '#12C2E9',
+    GREY: '#BBBBBB',
+    GREY_LIGHT: '#EEEEEE',
   },
 };
