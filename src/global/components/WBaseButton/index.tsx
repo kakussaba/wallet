@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {WText} from '../WText';
 import * as S from './style';
 import {WButtonProps} from './types';
@@ -8,19 +8,27 @@ export const WButton: React.FC<WButtonProps> = ({
   type,
   text,
   onPress,
-  disabled,
+  disabled = false,
 }) => {
   const {colors, fontSize} = useTheme();
 
+  const setBackgroundColor = useCallback(() => {
+    switch (type) {
+      case 'primary': {
+        return colors.BLUE_LIGHT;
+      }
+      case 'secondary': {
+        return colors.GREEN_LIGHT;
+      }
+      case 'tertiary': {
+        return colors.TRANSPARENT;
+      }
+    }
+  }, [type]);
+
   return (
     <S.Container
-      color={
-        disabled
-          ? colors.GREY_LIGHT
-          : type === 'primary'
-          ? colors.PRIMARY
-          : colors.SECONDARY
-      }
+      color={disabled ? colors.GREY_LIGHT : setBackgroundColor()}
       onPress={onPress}
       disabled={disabled}>
       <WText

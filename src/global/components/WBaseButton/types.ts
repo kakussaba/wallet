@@ -1,5 +1,5 @@
 export type WButtonProps = {
-  type: 'primary' | 'secondary';
+  type: 'primary' | 'secondary' | 'tertiary';
   text: string;
   onPress: () => void;
   disabled?: boolean;

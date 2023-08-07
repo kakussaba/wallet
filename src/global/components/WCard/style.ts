@@ -1,9 +1,13 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
-  background-color: ${({theme}) => theme.colors.BLACK};
+type ContainerProps = {
+  color: string;
+};
+
+export const Container = styled.TouchableOpacity<ContainerProps>`
+  background-color: ${props => props.color};
   border-radius: 16px;
-  padding: 25px 20px;
+  padding: 30px 20px 40px;
   margin-top: 30px;
   margin-bottom: 30px;
 `;

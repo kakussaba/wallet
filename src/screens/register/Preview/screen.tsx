@@ -11,6 +11,15 @@ import {WButton} from '../../../global/components/WBaseButton';
 
 type PreviewScreenProps = StackScreenProps<RegisterStackParamList, 'Preview'>;
 
+const data = [
+  {
+    type: 'Green Card',
+    name: 'João Carlos Pereira',
+    number: '0123 2345 3456 7890',
+    date: '04/32',
+  },
+];
+
 export const PreviewScreen: React.FC<PreviewScreenProps> = ({navigation}) => {
   const {colors, fontSize} = useTheme();
 
@@ -23,8 +32,8 @@ export const PreviewScreen: React.FC<PreviewScreenProps> = ({navigation}) => {
         fontSize={fontSize.SM}
         alignment="center"
       />
-      <WCard />
-      <WButton text="avançar" type="primary" />
+      <WCard data={data[0]} disabled />
+      <WButton text="avançar" type="primary" onPress={() => {}} />
     </WBackground>
   );
 };

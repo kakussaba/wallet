@@ -16,20 +16,19 @@ export default {
   },
 
   fontSize: {
-    SM: `${responsive(2)}px`,
+    SM: `${responsive(1.9)}px`,
     XMD: `${responsive(2.1)}px`,
     MD: `${responsive(3.2)}px`,
   },
 
   colors: {
-    PRIMARY: '#12C2E9',
-    SECONDARY: '#A5FF32',
-
     WHITE: '#FFFFFF',
     BLUE_DARK: '#142995',
     BLUE_LIGHT: '#12C2E9',
     GREY: '#BBBBBB',
     GREY_LIGHT: '#EEEEEE',
     BLACK: '#000000',
+    GREEN_LIGHT: '#A5FF32',
+    TRANSPARENT: 'transparent',
   },
 };

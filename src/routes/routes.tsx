@@ -7,6 +7,7 @@ import {NavigationStackParam} from './types';
 import {enableScreens} from 'react-native-screens';
 import {useTheme} from 'styled-components';
 import {RegisterRoutes} from '../screens/register/index.routes';
+import {CardsScreen} from '../screens/cards';
 
 enableScreens();
 
@@ -34,6 +35,17 @@ export const Routes: React.FC<{}> = () => {
               backgroundColor: colors.BLUE_DARK,
             },
             headerTintColor: colors.BLUE_LIGHT,
+          }}
+        />
+        <Stack.Screen
+          name={'Cards'}
+          component={CardsScreen}
+          options={{
+            title: 'Wallet Test',
+            headerStyle: {
+              backgroundColor: colors.WHITE,
+            },
+            headerTintColor: colors.BLUE_DARK,
           }}
         />
       </Stack.Navigator>
