@@ -2,10 +2,11 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {HomeScreen} from '../screens/home/index';
-import {RegisterScreen} from '../screens/register';
+import {RegisterScreen} from '../screens/register/Form';
 import {NavigationStackParam} from './types';
 import {enableScreens} from 'react-native-screens';
 import {useTheme} from 'styled-components';
+import {RegisterRoutes} from '../screens/register/index.routes';
 
 enableScreens();
 
@@ -26,7 +27,7 @@ export const Routes: React.FC<{}> = () => {
         />
         <Stack.Screen
           name={'Register'}
-          component={RegisterScreen}
+          component={RegisterRoutes}
           options={{
             title: 'cadastro',
             headerStyle: {

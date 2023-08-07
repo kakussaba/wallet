@@ -1,16 +1,18 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {WBackground} from '../../global/components/WBackground';
-import {WInput} from '../../global/components/WInput';
-import {WTitle} from '../../global/components/WTitle';
-import {NavigationStackParam} from '../../routes/types';
 import {Masks} from 'react-native-mask-input';
+import {WBackground} from '../../../global/components/WBackground';
+import {WButton} from '../../../global/components/WBaseButton';
+import {WInput} from '../../../global/components/WInput';
+import {WTitle} from '../../../global/components/WTitle';
+import {RegisterStackParamList} from '../types';
 import * as S from './style';
-import {WButton} from '../../global/components/WBaseButton';
 
-type RegisterScreenProps = StackScreenProps<NavigationStackParam, 'Register'>;
+type FormScreenProps = StackScreenProps<RegisterStackParamList, 'Form'>;
 
-export const RegisterScreen: React.FC<RegisterScreenProps> = ({navigation}) => {
+export const FormScreen: React.FC<FormScreenProps> = ({navigation}) => {
+  const {navigate} = navigation;
+
   return (
     <WBackground>
       <WTitle text="Wallet Test" />
@@ -34,9 +36,9 @@ export const RegisterScreen: React.FC<RegisterScreenProps> = ({navigation}) => {
       </S.Container>
       <WButton
         text="avançar"
-        type="secondary"
-        onPress={() => {}}
-        disabled={true}
+        type="primary"
+        onPress={() => navigate('Register', {screen: 'Preview'})}
+        disabled={false}
       />
     </WBackground>
   );

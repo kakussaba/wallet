@@ -13,7 +13,7 @@ export const WButton: React.FC<WButtonProps> = ({
   const {colors, fontSize} = useTheme();
 
   return (
-    <S.ContainerButton
+    <S.Container
       color={
         disabled
           ? colors.GREY_LIGHT
@@ -33,7 +33,8 @@ export const WButton: React.FC<WButtonProps> = ({
             : colors.DARK_BLUE
         }
         fontSize={fontSize.XMD}
+        alignment="center"
       />
-    </S.ContainerButton>
+    </S.Container>
   );
 };

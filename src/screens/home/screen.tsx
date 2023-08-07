@@ -14,11 +14,11 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
   return (
     <WBackground>
       <WTitle text="Wallet Test" />
-      <WButton text="meus cartões" type="primary" />
+      <WButton text="meus cartões" type="primary" onPress={() => {}} />
       <WButton
         text="cadastrar cartão"
         type="secondary"
-        onPress={() => navigate('Register')}
+        onPress={() => navigate('Register', {screen: 'Form'})}
       />
     </WBackground>
   );

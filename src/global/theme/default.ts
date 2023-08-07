@@ -30,5 +30,6 @@ export default {
     BLUE_LIGHT: '#12C2E9',
     GREY: '#BBBBBB',
     GREY_LIGHT: '#EEEEEE',
+    BLACK: '#000000',
   },
 };

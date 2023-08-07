@@ -16,7 +16,7 @@ export const WInput: React.FC<WInputProps> = ({
   return (
     <S.Container full={full}>
       <WText text={label} fontSize={fontSize.XS} color={colors.GREY} />
-      <S.ContainerMaskInput
+      <S.MaskInputContainer
         value={value}
         onChangeText={unmasked => {
           setValue(unmasked);

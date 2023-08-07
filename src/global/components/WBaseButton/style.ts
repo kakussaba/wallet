@@ -1,12 +1,11 @@
 import styled from 'styled-components/native';
 
-type ContainerButtonProps = {
+type ContainerProps = {
   color: string;
 };
 
-export const ContainerButton = styled.TouchableOpacity<ContainerButtonProps>`
+export const Container = styled.TouchableOpacity<ContainerProps>`
   justify-content: center;
-  align-items: center;
   align-self: center;
   background-color: ${props => props.color};
   height: 55px;
