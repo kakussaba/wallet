@@ -9,6 +9,7 @@ import {useTheme} from 'styled-components';
 import {RegisterRoutes} from '../screens/register/index.routes';
 import {CardsScreen} from '../screens/cards';
 import {WIconButton} from '../global/components/WIconButton';
+import {navigationRef} from './RootNavigation';
 
 enableScreens();
 
@@ -18,7 +19,7 @@ export const Routes: React.FC<{}> = () => {
   const {colors} = useTheme();
 
   return (
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
       <Stack.Navigator initialRouteName={'Home'}>
         <Stack.Screen
           name={'Home'}

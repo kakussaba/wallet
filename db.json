@@ -7,6 +7,14 @@
       "name": "Ka Teste",
       "expiration": "12/23",
       "cvv": "123"
+    },
+    {
+      "id": "63429502-cb43-449a-9644-b44cd63ad92b",
+      "type": 1,
+      "number": "1234 5678 0909 0990",
+      "name": "Kananda Kussaba",
+      "expiration": "12/34",
+      "cvv": "123"
     }
   ]
 }

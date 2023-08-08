@@ -8,15 +8,12 @@ import {useTheme} from 'styled-components/native';
 import * as S from './style';
 import {WCard} from '../../../global/components/WCard';
 import {WButton} from '../../../global/components/WBaseButton';
+import {navigate} from '../../../routes/RootNavigation';
 
 type PreviewScreenProps = StackScreenProps<RegisterStackParamList, 'Preview'>;
 
-export const PreviewScreen: React.FC<PreviewScreenProps> = ({
-  route,
-  navigation,
-}) => {
+export const PreviewScreen: React.FC<PreviewScreenProps> = ({route}) => {
   const {params} = route;
-  const {navigate} = navigation;
   const {colors, fontSize} = useTheme();
 
   return (
