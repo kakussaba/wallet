@@ -36,7 +36,7 @@ export const WButton: React.FC<WButtonProps> = ({
         color={
           disabled
             ? colors.GREY
-            : type === 'primary'
+            : type === 'primary' || type === 'tertiary'
             ? colors.WHITE
             : colors.DARK_BLUE
         }

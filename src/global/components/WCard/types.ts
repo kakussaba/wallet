@@ -4,4 +4,5 @@ export interface WCardProps {
   data: Card;
   onPress?: () => void;
   disabled?: boolean;
+  unfocused?: boolean;
 }

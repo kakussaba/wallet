@@ -6,10 +6,18 @@ export const Container = styled.View`
 `;
 
 export const Body = styled.View`
+  flex: 1;
   flex-direction: column;
-  padding: 0 30px;
+  justify-content: space-around;
 `;
 
 export const CardsContainer = styled.View`
-  margin-bottom: -40px;
+  flex: 0.6;
+  padding: 0 30px;
+  z-index: 1;
+`;
+
+export const ButtonsContainer = styled.View`
+  flex: 0.4;
+  padding: 0 30px;
 `;

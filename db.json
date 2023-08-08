@@ -1,0 +1,20 @@
+{
+  "cards": [
+    {
+      "id": "4ec42ba9-50af-40d2-af90-8312edbd9ca1",
+      "number": "3529 5435 3355 8727",
+      "cvv": "317",
+      "name": "John Doe",
+      "expiration": "09/28",
+      "type": "Black Card"
+    },
+    {
+      "id": "4ec42ba9-50af-40d2-af90-8312edbd9ca2",
+      "number": "3529 5435 3355 8727",
+      "cvv": "317",
+      "name": "John Doe",
+      "expiration": "09/28",
+      "type": "Green Card"
+    }
+  ]
+}
