@@ -55,6 +55,7 @@ export const Routes: React.FC<{}> = () => {
           component={CardsScreen}
           options={({navigation}) => ({
             title: 'Wallet Test',
+            headerShown: false,
             headerStyle: {
               backgroundColor: colors.WHITE,
             },

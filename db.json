@@ -1,19 +1,11 @@
 {
   "cards": [
     {
-      "id": "c7ace7f6-cb54-4f8d-8540-864340f5bd02",
+      "id": "e8ad8fcd-18a3-467e-bdd8-436f4733a95a",
       "type": 0,
-      "number": "1234 5678 9004 5454",
-      "name": "Rafael M Costa",
-      "expiration": "12/34",
-      "cvv": "123"
-    },
-    {
-      "id": "b31f6b73-13be-4bf9-a485-465bad9be152",
-      "type": 1,
-      "number": "1234 5678 9086 4553",
-      "name": "Kananda Kussaba",
-      "expiration": "09/34",
+      "number": "1234 5566 5656 5656",
+      "name": "Ka Teste",
+      "expiration": "12/23",
       "cvv": "123"
     }
   ]
