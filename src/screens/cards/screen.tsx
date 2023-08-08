@@ -66,7 +66,7 @@ export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
   return (
     <>
       {loading ? (
-        <WBackground>
+        <WBackground big>
           <WLoading loading={loading} />
         </WBackground>
       ) : (
