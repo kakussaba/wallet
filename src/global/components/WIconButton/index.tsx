@@ -4,11 +4,7 @@ import {useTheme} from 'styled-components/native';
 import * as S from './style';
 import {WIconButtonProps} from './type';
 
-export const WIconButton: React.FC<WIconButtonProps> = ({
-  icon,
-  onPress,
-  backgroundColor,
-}) => {
+export const WIconButton: React.FC<WIconButtonProps> = ({icon, onPress}) => {
   const {colors} = useTheme();
 
   return (
@@ -20,7 +16,7 @@ export const WIconButton: React.FC<WIconButtonProps> = ({
       iconStyle={{
         left: 5,
       }}
-      backgroundColor={backgroundColor ?? colors.TRANSPARENT}
+      backgroundColor={colors.TRANSPARENT}
       activeOpacity={1}
     />
   );

@@ -46,7 +46,6 @@ export const Routes: React.FC<{}> = () => {
                 onPress={() => {
                   navigation.goBack();
                 }}
-                backgroundColor={colors.BLUE_DARK}
               />
             ),
           })}

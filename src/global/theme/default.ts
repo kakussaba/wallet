@@ -29,6 +29,7 @@ export default {
     GREY_LIGHT: '#EEEEEE',
     BLACK: '#000000',
     GREEN_LIGHT: '#A5FF32',
-    TRANSPARENT: '#FFFFFFFF',
+    TRANSPARENT: '#FF000000',
+    RED: '#FF0000',
   },
 };

@@ -12,9 +12,9 @@ export const WCard: React.FC<WCardProps> = ({
 }) => {
   const {colors, fontSize} = useTheme();
 
-  const cardColor =
-    data.type === 'Black Card' ? colors.BLACK : colors.GREEN_LIGHT;
-  const color = data.type === 'Black Card' ? colors.WHITE : colors.BLACK;
+  const cardColor = data.type === 0 ? colors.BLACK : colors.GREEN_LIGHT;
+  const color = data.type === 0 ? colors.WHITE : colors.BLACK;
+  const typeCard = data.type === 0 ? 'Black Card' : 'Green Card';
 
   return (
     <S.Container
@@ -23,7 +23,7 @@ export const WCard: React.FC<WCardProps> = ({
       disabled={disabled}
       unfocused={unfocused}>
       <S.Header>
-        <WText text={data.type} color={color} fontSize={fontSize.XMD} />
+        <WText text={typeCard} color={color} fontSize={fontSize.XMD} />
       </S.Header>
       <WText text={data.name} color={color} fontSize={fontSize.SM} />
       <WText text={data.number} color={color} fontSize={fontSize.SM} />
