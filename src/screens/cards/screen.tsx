@@ -7,10 +7,13 @@ import {Card} from '../../services/types';
 import {WButton} from '../../global/components/WBaseButton';
 import {getCards} from '../../services/walletApi';
 import {WCardList} from '../../global/components/WCardList';
+import {WText} from '../../global/components/WText';
+import {useTheme} from 'styled-components/native';
 
 type CardsScreenProps = StackScreenProps<NavigationStackParam, 'Cards'>;
 
 export const CardsScreen: React.FC<CardsScreenProps> = () => {
+  const {colors, fontSize} = useTheme();
   const [cards, setCards] = useState<Card[]>([]);
   const [cardInUse, setCardInUse] = useState<boolean>(false);
 
@@ -29,36 +32,40 @@ export const CardsScreen: React.FC<CardsScreenProps> = () => {
 
   const renderCards = useCallback(
     () => (
-      <S.CardsContainer>
-        <WCardList
-          data={cards}
-          cardInUse={cardInUse}
-          onPress={() => setCardInUse(false)}
-        />
-      </S.CardsContainer>
+      <>
+        <S.CardsContainer>
+          <WCardList
+            data={cards}
+            cardInUse={cardInUse}
+            onPress={() => setCardInUse(false)}
+          />
+        </S.CardsContainer>
+        <S.ButtonsContainer>
+          <WButton
+            text={cardInUse ? 'pagar com este cartão' : 'usar este cartão'}
+            type={cardInUse ? 'primary' : 'tertiary'}
+            onPress={() => !cardInUse && setCardInUse(true)}
+          />
+        </S.ButtonsContainer>
+      </>
     ),
     [cards, cardInUse],
-  );
-
-  const renderButtons = useCallback(
-    () => (
-      <S.ButtonsContainer>
-        <WButton
-          text={cardInUse ? 'pagar com este cartão' : 'usar este cartão'}
-          type={cardInUse ? 'primary' : 'tertiary'}
-          onPress={() => !cardInUse && setCardInUse(true)}
-        />
-      </S.ButtonsContainer>
-    ),
-    [cardInUse],
   );
 
   return (
     <S.Container>
       <WHeader text="Meus cartões" />
       <S.Body>
-        {cards && renderCards()}
-        {renderButtons()}
+        {cards.length > 0 ? (
+          renderCards()
+        ) : (
+          <WText
+            text="Você ainda não possui nenhum cartão cadastrado."
+            color={colors.WHITE}
+            fontSize={fontSize.SM}
+            alignment="center"
+          />
+        )}
       </S.Body>
     </S.Container>
   );
