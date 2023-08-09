@@ -15,11 +15,13 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({navigation}) => {
     <WBackground>
       <WTitle text="Wallet Test" />
       <WButton
+        testID="meus cartões"
         text="meus cartões"
         type="primary"
         onPress={() => navigate('Cards')}
       />
       <WButton
+        testID="cadastrar cartão"
         text="cadastrar cartão"
         type="secondary"
         onPress={() => navigate('Register', {screen: 'Form'})}

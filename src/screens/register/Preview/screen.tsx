@@ -5,7 +5,6 @@ import {WText} from '../../../global/components/WText';
 import {WTitle} from '../../../global/components/WTitle';
 import {RegisterStackParamList} from '../types';
 import {useTheme} from 'styled-components/native';
-import * as S from './style';
 import {WCard} from '../../../global/components/WCard';
 import {WButton} from '../../../global/components/WBaseButton';
 import {navigate} from '../../../routes/RootNavigation';

@@ -65,13 +65,14 @@ export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
       <>
         <S.CardsContainer>
           <WCardList
-            data={cards}
+            data={cards.slice(-2)}
             cardInUse={cardInUse}
             onPress={() => setCardInUse(false)}
           />
         </S.CardsContainer>
         <S.ButtonsContainer>
           <WButton
+            testID={cardInUse ? 'pagar com este cartão' : 'usar este cartão'}
             text={cardInUse ? 'pagar com este cartão' : 'usar este cartão'}
             type={cardInUse ? 'primary' : 'tertiary'}
             onPress={() => !cardInUse && setCardInUse(true)}

@@ -49,6 +49,7 @@ export const WCardList: React.FC<WCardListProps> = ({
     <>
       {data.map(i => (
         <Animated.View
+          key={i.id}
           style={{
             transform: [
               {
