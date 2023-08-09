@@ -1,68 +1,12 @@
 {
   "cards": [
     {
-      "id": "43a40f04-7c7a-4b9e-b377-b576d4a880b3",
+      "id": "4ec42ba9-50af-40d2-af90-8312edbd9ca2",
+      "number": "3529 5435 3355 8727",
+      "cvv": "317",
+      "name": "John Doe",
       "type": 1,
-      "number": "1233 4343 4343 4343",
-      "name": "Kananda Kussaba",
-      "expiration": "12/33",
-      "cvv": "123"
-    },
-    {
-      "id": "bdd2f776-5301-4125-8318-b73e7876f286",
-      "type": 0,
-      "number": "1232 3232 3232 3232",
-      "name": "Teste Kananda",
-      "expiration": "12/33",
-      "cvv": "123"
-    },
-    {
-      "id": "00a97f40-88fc-43d0-b2f9-30e83095c599",
-      "type": 0,
-      "number": "1232 3232 3232 3232",
-      "name": "Teste Kananda",
-      "expiration": "12/33",
-      "cvv": "124"
-    },
-    {
-      "id": "266fa0e6-0e92-4242-85b4-56d60a40b361",
-      "type": 0,
-      "number": "1232 3232 3232 3232",
-      "name": "Teste Kananda",
-      "expiration": "12/33",
-      "cvv": "121"
-    },
-    {
-      "id": "03280e4f-ec33-4af2-87e7-c46db0205b4f",
-      "type": 1,
-      "number": "1232 3232 3232 3232",
-      "name": "Teste Kanandae",
-      "expiration": "12/33",
-      "cvv": "121"
-    },
-    {
-      "id": "f392dec8-dc0b-4d6b-a893-db4f08c8134f",
-      "type": 1,
-      "number": "1232 3232 3928 3902",
-      "name": "Lusiraldo",
-      "expiration": "12/33",
-      "cvv": "132"
-    },
-    {
-      "id": "14f94e6f-7cbb-4241-a2f1-c871af226388",
-      "type": 0,
-      "number": "2389 0283 2083 2038",
-      "name": "Roberto Chade",
-      "expiration": "12/33",
-      "cvv": "123"
-    },
-    {
-      "id": "031fd644-2e9b-417c-a4e8-4a226bd311d5",
-      "type": 1,
-      "number": "2890 3283 0928 3209",
-      "name": "Lusio",
-      "expiration": "12/33",
-      "cvv": "123"
+      "expiration": "12/33"
     }
   ]
 }

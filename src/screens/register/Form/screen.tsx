@@ -36,6 +36,7 @@ export const FormScreen: React.FC<FormScreenProps> = ({navigation}) => {
         ...values,
       };
       const data = await postCard(card);
+      console.log(data);
       navigate('Register', {screen: 'Preview', params: {card: data}});
     } catch (error) {
       console.log(error);
