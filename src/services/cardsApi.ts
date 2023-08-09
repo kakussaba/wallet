@@ -1,4 +1,4 @@
-import {API} from './index';
+import {API} from '../api/index';
 import {AxiosResponse} from 'axios';
 import {Card} from './types';
 

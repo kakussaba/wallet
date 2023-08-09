@@ -14,6 +14,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import {Card} from '../../../services/types';
+import {yupValidationSchema} from './valitationSchema';
 
 export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
   onSubmit,
@@ -29,12 +30,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
       onSubmit={values => {
         onSubmit(values);
       }}
-      validationSchema={yup.object().shape({
-        number: yup.string().min(19).required(),
-        name: yup.string().max(50).required(),
-        expiration: yup.string().min(5).required(),
-        cvv: yup.string().min(3).required(),
-      })}>
+      validationSchema={yup.object().shape(yupValidationSchema)}>
       {({
         values,
         handleChange,

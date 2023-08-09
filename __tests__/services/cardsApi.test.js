@@ -1,4 +1,4 @@
-import {API} from '../../src/services';
+import {API} from '../../src/api';
 import {getCards, postCard} from '../../src/services/cardsApi';
 
 jest.mock('../../src/services/index');
