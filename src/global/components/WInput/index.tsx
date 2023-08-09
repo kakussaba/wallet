@@ -8,6 +8,7 @@ export const WInput: React.FC<WInputProps> = ({
   value,
   label,
   mask,
+  testID,
   full = false,
   placeholder = '',
   onChangeText,
@@ -20,6 +21,7 @@ export const WInput: React.FC<WInputProps> = ({
     <S.Container full={full}>
       <WText text={label} fontSize={fontSize.XS} color={colors.GREY} />
       <S.MaskInputContainer
+        testID={testID}
         value={maskValue}
         onChangeText={unmasked => {
           setMaskValue(unmasked);

@@ -16,9 +16,12 @@ export default {
   },
 
   fontSize: {
-    SM: `${responsive(1.9)}px`,
-    XMD: `${responsive(2.1)}px`,
-    MD: `${responsive(3.2)}px`,
+    XS: `${responsive(1.7)}px`,
+    XSM: `${responsive(1.9)}px`,
+    SM: `${responsive(2.1)}px`,
+    XMD: `${responsive(2.4)}px`,
+    MD: `${responsive(2.6)}px`,
+    LG: `${responsive(3.3)}px`,
   },
 
   colors: {

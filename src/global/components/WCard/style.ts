@@ -12,6 +12,9 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
   margin-top: 30px;
   margin-bottom: 30px;
   opacity: ${props => (props.unfocused ? 0.7 : 1)};
+  shadow-color: ${({theme}) => theme.colors.BLUE_DARK};
+  shadow-offset: 0 -5px;
+  shadow-opacity: 0.3;
 `;
 
 export const Header = styled.View`

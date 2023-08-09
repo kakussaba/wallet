@@ -12,18 +12,18 @@ export const WCardList: React.FC<WCardListProps> = ({
   onPress,
 }) => {
   const [frontCard, setFrontCard] = useState<number>(0);
-  const frontTranslation = useRef(new Animated.Value(200)).current;
-  const backTranslation = useRef(new Animated.Value(-120)).current;
+  const frontTranslation = useRef(new Animated.Value(180)).current;
+  const backTranslation = useRef(new Animated.Value(-140)).current;
 
   useEffect(() => {
     Animated.timing(frontTranslation, {
-      toValue: frontCard === INITIAL_FRONT ? 200 : 130,
+      toValue: frontCard === INITIAL_FRONT ? 180 : 110,
       duration: 1000,
       useNativeDriver: true,
     }).start();
 
     Animated.timing(backTranslation, {
-      toValue: frontCard === INITIAL_FRONT ? -120 : -50,
+      toValue: frontCard === INITIAL_FRONT ? -140 : -70,
       duration: 1000,
       useNativeDriver: true,
     }).start();
@@ -32,7 +32,7 @@ export const WCardList: React.FC<WCardListProps> = ({
   useEffect(() => {
     if (cardInUse) {
       Animated.timing(frontTranslation, {
-        toValue: frontCard === INITIAL_FRONT ? 100 : 580,
+        toValue: frontCard === INITIAL_FRONT ? 80 : 580,
         duration: 1000,
         useNativeDriver: true,
       }).start();

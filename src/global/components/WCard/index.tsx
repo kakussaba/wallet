@@ -23,10 +23,10 @@ export const WCard: React.FC<WCardProps> = ({
       disabled={disabled}
       unfocused={unfocused}>
       <S.Header>
-        <WText text={typeCard} color={color} fontSize={fontSize.XMD} />
+        <WText text={typeCard} color={color} fontSize={fontSize.SM} />
       </S.Header>
-      <WText text={data.name} color={color} fontSize={fontSize.SM} />
-      <WText text={data.number} color={color} fontSize={fontSize.SM} />
+      <WText text={data.name} color={color} fontSize={fontSize.XSM} />
+      <WText text={data.number} color={color} fontSize={fontSize.XSM} />
       <WText
         text={`Validade ${data.expiration}`}
         color={color}

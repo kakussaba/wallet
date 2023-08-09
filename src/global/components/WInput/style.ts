@@ -11,10 +11,12 @@ export const Container = styled.View<ContainerProps>`
 
 export const MaskInputContainer = styled(MaskInput)`
   background-color: ${({theme}) => theme.colors.WHITE};
-  height: 45px;
+  height: 55px;
   border-radius: 6px;
   padding: ${({theme}) => theme.padding.MD};
   margin: ${({theme}) => theme.margin.SM} 0;
   font-weight: 400;
   font-family: 'PT Sans Caption';
+  color: ${({theme}) => theme.colors.BLUE_DARK};
+  font-size: ${({theme}) => theme.fontSize.SM};
 `;

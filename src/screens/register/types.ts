@@ -1,7 +1,9 @@
 import {Card} from '../../services/types';
 
 export type RegisterStackParamList = {
-  Form: undefined;
+  Form: {
+    cards?: Card[];
+  };
   Preview: {
     card: Card;
   };

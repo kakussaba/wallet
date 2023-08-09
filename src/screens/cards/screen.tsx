@@ -5,12 +5,13 @@ import {WHeader} from '../../global/components/WHeader';
 import * as S from './style';
 import {Card} from '../../services/types';
 import {WButton} from '../../global/components/WBaseButton';
-import {getCards} from '../../services/walletApi';
+import {getCards} from '../../services/cardsApi';
 import {WCardList} from '../../global/components/WCardList';
 import {WText} from '../../global/components/WText';
 import {useTheme} from 'styled-components/native';
 import {WBackground} from '../../global/components/WBackground';
 import {WLoading} from '../../global/components/WLoading';
+import {WHeaderBar} from '../../global/components/WHeaderBar';
 
 type CardsScreenProps = StackScreenProps<NavigationStackParam, 'Cards'>;
 
@@ -32,6 +33,24 @@ export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
       }, 3000);
     }
   };
+
+  useEffect(() => {
+    navigation.setOptions({
+      header: () => (
+        <WHeaderBar
+          text="Wallet Test"
+          textColor={colors.BLUE_DARK}
+          leftIcon="arrow-left"
+          onPressLeftIcon={() => navigation.goBack()}
+          rightIcon="plus"
+          onPressRightIcon={() =>
+            navigation.navigate('Register', {screen: 'Form'})
+          }
+          backgroundColor={colors.WHITE}
+        />
+      ),
+    });
+  }, [navigation]);
 
   useEffect(() => {
     getCardsList();

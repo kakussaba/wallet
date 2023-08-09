@@ -10,7 +10,7 @@ export const WTitle: React.FC<WTitleProps> = ({text}) => {
     <S.Container>
       <WText
         text={text}
-        fontSize={fontSize.MD}
+        fontSize={fontSize.LG}
         color={colors.WHITE}
         alignment="center"
       />

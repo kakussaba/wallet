@@ -8,6 +8,7 @@ export const WButton: React.FC<WButtonProps> = ({
   type,
   text,
   onPress,
+  testID,
   disabled = false,
 }) => {
   const {colors, fontSize} = useTheme();
@@ -30,7 +31,8 @@ export const WButton: React.FC<WButtonProps> = ({
     <S.Container
       color={disabled ? colors.GREY_LIGHT : setBackgroundColor()}
       onPress={onPress}
-      disabled={disabled}>
+      disabled={disabled}
+      testID={testID}>
       <WText
         text={text}
         color={
@@ -40,7 +42,7 @@ export const WButton: React.FC<WButtonProps> = ({
             ? colors.WHITE
             : colors.DARK_BLUE
         }
-        fontSize={fontSize.XMD}
+        fontSize={type === 'tertiary' ? fontSize.XSM : fontSize.SM}
         alignment="center"
       />
     </S.Container>
