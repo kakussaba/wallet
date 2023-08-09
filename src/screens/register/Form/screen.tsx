@@ -12,6 +12,12 @@ import {Formik} from 'formik';
 import {registerCard} from '../../../services/walletApi';
 import {Card} from '../../../services/types';
 import uuid from 'react-native-uuid';
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  TouchableWithoutFeedback,
+} from 'react-native';
 
 type FormScreenProps = StackScreenProps<RegisterStackParamList, 'Form'>;
 
@@ -52,58 +58,63 @@ export const FormScreen: React.FC<FormScreenProps> = ({navigation}) => {
       {({
         values,
         handleChange,
-        errors,
         setFieldTouched,
-        touched,
         isValid,
         handleSubmit,
         dirty,
+        resetForm,
       }) => (
         <WBackground>
-          <WTitle text="Wallet Test" />
-          <S.Container>
-            <WInput
-              value={values.number}
-              label="número do cartão"
-              mask={Masks.CREDIT_CARD}
-              onChangeText={handleChange('number')}
-              onBlur={() => setFieldTouched('number')}
-              full
-            />
-          </S.Container>
-          <S.Container>
-            <WInput
-              value={values.name}
-              label="nome do titular do cartão"
-              onChangeText={handleChange('name')}
-              onBlur={() => setFieldTouched('name')}
-              full
-            />
-          </S.Container>
-          <S.Container>
-            <WInput
-              value={values.expiration}
-              label="vencimento"
-              mask={[/\d/, /\d/, '/', /\d/, /\d/]}
-              onChangeText={handleChange('expiration')}
-              onBlur={() => setFieldTouched('expiration')}
-              placeholder="0"
-            />
-            <WInput
-              value={values.cvv}
-              label="código de segurança"
-              mask={[/\d/, /\d/, /\d/]}
-              onChangeText={handleChange('cvv')}
-              onBlur={() => setFieldTouched('cvv')}
-              placeholder="*"
-            />
-          </S.Container>
-          <WButton
-            text="avançar"
-            type="primary"
-            onPress={handleSubmit}
-            disabled={!(isValid && dirty)}
-          />
+          <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+            <KeyboardAvoidingView
+              behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+              keyboardVerticalOffset={90}>
+              <WTitle text="Wallet Test" />
+              <S.Container>
+                <WInput
+                  value={values.number}
+                  label="número do cartão"
+                  mask={Masks.CREDIT_CARD}
+                  onChangeText={handleChange('number')}
+                  onBlur={() => setFieldTouched('number')}
+                  full
+                />
+              </S.Container>
+              <S.Container>
+                <WInput
+                  value={values.name}
+                  label="nome do titular do cartão"
+                  onChangeText={handleChange('name')}
+                  onBlur={() => setFieldTouched('name')}
+                  full
+                />
+              </S.Container>
+              <S.Container>
+                <WInput
+                  value={values.expiration}
+                  label="vencimento"
+                  mask={[/\d/, /\d/, '/', /\d/, /\d/]}
+                  onChangeText={handleChange('expiration')}
+                  onBlur={() => setFieldTouched('expiration')}
+                  placeholder="0"
+                />
+                <WInput
+                  value={values.cvv}
+                  label="código de segurança"
+                  mask={[/\d/, /\d/, /\d/]}
+                  onChangeText={handleChange('cvv')}
+                  onBlur={() => setFieldTouched('cvv')}
+                  placeholder="*"
+                />
+              </S.Container>
+              <WButton
+                text="avançar"
+                type="primary"
+                onPress={handleSubmit}
+                disabled={!(isValid && dirty)}
+              />
+            </KeyboardAvoidingView>
+          </TouchableWithoutFeedback>
         </WBackground>
       )}
     </Formik>

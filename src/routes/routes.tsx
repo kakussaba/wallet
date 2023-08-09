@@ -10,6 +10,7 @@ import {RegisterRoutes} from '../screens/register/index.routes';
 import {CardsScreen} from '../screens/cards';
 import {WIconButton} from '../global/components/WIconButton';
 import {navigationRef} from './RootNavigation';
+import {View} from 'react-native';
 
 enableScreens();
 
@@ -33,9 +34,7 @@ export const Routes: React.FC<{}> = () => {
           component={RegisterRoutes}
           options={({navigation}) => ({
             title: 'cadastro',
-            headerStyle: {
-              backgroundColor: colors.BLUE_DARK,
-            },
+            headerTransparent: true,
             headerTitleStyle: {
               fontFamily: 'PT Sans Caption',
               fontSize: 22,
