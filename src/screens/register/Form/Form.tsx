@@ -76,7 +76,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
                   testID="expiration"
                   value={values.expiration}
                   label="vencimento"
-                  mask={[/\d/, /\d/, '/', /\d/, /\d/]}
+                  mask={[/^[0-1]$/, /^([0-9]|1[012])$/, '/', /\d/, /\d/]}
                   onChangeText={handleChange('expiration')}
                   onBlur={() => setFieldTouched('expiration')}
                   placeholder="0"
