@@ -25,7 +25,7 @@ export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
 
   const getCardsList = async () => {
     try {
-      const {data} = await getCards();
+      const data = await getCards();
       setCards(data);
     } catch (error) {
       setError(true);

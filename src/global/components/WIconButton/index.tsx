@@ -1,6 +1,4 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {useTheme} from 'styled-components/native';
 import * as S from './style';

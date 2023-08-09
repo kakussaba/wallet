@@ -1,19 +1,18 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React, {useEffect} from 'react';
 import {RegisterStackParamList} from '../types';
-import {registerCard} from '../../../services/cardsApi';
+import {postCard} from '../../../services/cardsApi';
 import {Card} from '../../../services/types';
 import uuid from 'react-native-uuid';
 import {Form} from './Form';
 import {useTheme} from 'styled-components/native';
-import {WIconButton} from '../../../global/components/WIconButton';
-import {WHeaderBar, WHeaderTitle} from '../../../global/components/WHeaderBar';
+import {WHeaderBar} from '../../../global/components/WHeaderBar';
 
 type FormScreenProps = StackScreenProps<RegisterStackParamList, 'Form'>;
 
 export const FormScreen: React.FC<FormScreenProps> = ({navigation}) => {
   const {navigate} = navigation;
-  const {colors, fontSize} = useTheme();
+  const {colors} = useTheme();
 
   useEffect(() => {
     navigation.getParent()?.setOptions({
@@ -29,15 +28,15 @@ export const FormScreen: React.FC<FormScreenProps> = ({navigation}) => {
     });
   }, [navigation]);
 
-  const postCard = async (values: Card) => {
+  const registerCard = async (values: Card) => {
     try {
       const card = {
         id: uuid.v4(),
         type: Math.random() < 0.5 ? 0 : 1,
         ...values,
       };
-      await registerCard(card);
-      navigate('Register', {screen: 'Preview', params: {card: card}});
+      const data = await postCard(card);
+      navigate('Register', {screen: 'Preview', params: {card: data}});
     } catch (error) {
       console.log(error);
     }
@@ -46,7 +45,7 @@ export const FormScreen: React.FC<FormScreenProps> = ({navigation}) => {
   return (
     <Form
       onSubmit={(values: Card) => {
-        postCard(values);
+        registerCard(values);
       }}
     />
   );
