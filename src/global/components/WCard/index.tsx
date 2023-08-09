@@ -3,6 +3,7 @@ import {WText} from '../WText';
 import * as S from './style';
 import {WCardProps} from './types';
 import {useTheme} from 'styled-components/native';
+import {obfuscateCreditCard} from '../../utils/formatting';
 
 export const WCard: React.FC<WCardProps> = ({
   data,
@@ -26,7 +27,11 @@ export const WCard: React.FC<WCardProps> = ({
         <WText text={typeCard} color={color} fontSize={fontSize.SM} />
       </S.Header>
       <WText text={data.name} color={color} fontSize={fontSize.XSM} />
-      <WText text={data.number} color={color} fontSize={fontSize.XSM} />
+      <WText
+        text={obfuscateCreditCard(data.number)}
+        color={color}
+        fontSize={fontSize.XSM}
+      />
       <WText
         text={`Validade ${data.expiration}`}
         color={color}

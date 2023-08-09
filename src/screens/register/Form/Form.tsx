@@ -89,12 +89,11 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
                   mask={[/\d/, /\d/, /\d/]}
                   onChangeText={handleChange('cvv')}
                   onBlur={() => setFieldTouched('cvv')}
-                  placeholder="*"
+                  placeholder="•"
                   type="numeric"
                 />
               </S.Container>
               <WButton
-                testID="submit"
                 text="avançar"
                 type="primary"
                 onPress={handleSubmit}
