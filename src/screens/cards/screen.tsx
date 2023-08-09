@@ -3,35 +3,20 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {NavigationStackParam} from '../../routes/types';
 import {WHeader} from '../../global/components/WHeader';
 import * as S from './style';
-import {Card} from '../../services/types';
-import {getCards} from '../../services/cardsApi';
 import {WText} from '../../global/components/WText';
 import {useTheme} from 'styled-components/native';
 import {WBackground} from '../../global/components/WBackground';
 import {WLoading} from '../../global/components/WLoading';
 import {WHeaderBar} from '../../global/components/WHeaderBar';
 import {Cards} from './Cards';
+import {useCards} from '../../hooks/useCards';
 
 type CardsScreenProps = StackScreenProps<NavigationStackParam, 'Cards'>;
 
 export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
   const {colors, fontSize} = useTheme();
-  const [cards, setCards] = useState<Card[]>([]);
+  const {cards, updateCards, loading} = useCards();
   const [cardInUse, setCardInUse] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  const getCardsList = async () => {
-    try {
-      const data = await getCards();
-      setCards(data);
-    } catch (error) {
-      console.log(error);
-    } finally {
-      setTimeout(() => {
-        setLoading(false);
-      }, 3000);
-    }
-  };
 
   useEffect(() => {
     navigation.setOptions({
@@ -52,7 +37,7 @@ export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
   }, [navigation]);
 
   useEffect(() => {
-    getCardsList();
+    updateCards();
   }, [navigation]);
 
   useEffect(() => {
@@ -81,7 +66,7 @@ export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
         <S.Container>
           <WHeader text="Meus cartões" />
           <S.Body>
-            {cards.length > 0 ? (
+            {cards?.length > 0 ? (
               renderCards()
             ) : (
               <WText
