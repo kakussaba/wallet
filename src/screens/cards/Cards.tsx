@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './style';
-import {WCardList} from '../../global/components/WCardList';
-import {WButton} from '../../global/components/WBaseButton';
+import {WCardList} from '../../components/WCardList';
+import {WButton} from '../../components/WButton';
 import {CardsProps} from './types';
 
 export const Cards: React.FC<CardsProps> = ({

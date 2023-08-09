@@ -1,4 +1,4 @@
-import {Card} from '../../../services/types';
+import {Card} from '../../services/types';
 
 export interface WCardListProps {
   data: Card[];

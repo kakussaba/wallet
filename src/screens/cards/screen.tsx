@@ -1,13 +1,13 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React, {useCallback, useEffect, useState} from 'react';
 import {NavigationStackParam} from '../../routes/types';
-import {WHeader} from '../../global/components/WHeader';
+import {WHeader} from '../../components/WHeader';
 import * as S from './style';
-import {WText} from '../../global/components/WText';
+import {WText} from '../../components/WText';
 import {useTheme} from 'styled-components/native';
-import {WBackground} from '../../global/components/WBackground';
-import {WLoading} from '../../global/components/WLoading';
-import {WHeaderBar} from '../../global/components/WHeaderBar';
+import {WBackground} from '../../components/WBackground';
+import {WLoading} from '../../components/WLoading';
+import {WHeaderBar} from '../../components/WHeaderBar';
 import {Cards} from './Cards';
 import {useCards} from '../../hooks/useCards';
 
@@ -15,7 +15,7 @@ type CardsScreenProps = StackScreenProps<NavigationStackParam, 'Cards'>;
 
 export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
   const {colors, fontSize} = useTheme();
-  const {cards, updateCards, loading} = useCards();
+  const [cards, updateCards, loading] = useCards();
   const [cardInUse, setCardInUse] = useState<boolean>(false);
 
   useEffect(() => {

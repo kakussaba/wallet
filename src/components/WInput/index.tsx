@@ -22,6 +22,8 @@ export const WInput: React.FC<WInputProps> = ({
     <S.Container full={full}>
       <WText text={label} fontSize={fontSize.XS} color={colors.GREY} />
       <S.MaskInputContainer
+        accessible
+        accessibilityHint={testID}
         testID={testID}
         value={maskValue}
         onChangeText={unmasked => {

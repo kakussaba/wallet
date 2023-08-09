@@ -1,10 +1,10 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {WButton} from '../../global/components/WBaseButton';
+import {WButton} from '../../components/WButton';
 import {NavigationStackParam} from '../../routes/types';
 
-import {WBackground} from '../../global/components/WBackground';
-import {WTitle} from '../../global/components/WTitle';
+import {WBackground} from '../../components/WBackground';
+import {WTitle} from '../../components/WTitle';
 
 type HomeScreenProps = StackScreenProps<NavigationStackParam, 'Home'>;
 

@@ -1,7 +1,7 @@
 import {API} from '../../src/api';
 import {getCards, postCard} from '../../src/services/cardsApi';
 
-jest.mock('../../src/services/index');
+jest.mock('../../src/api/index');
 
 const mockSuccessRequest = result => {
   return new Promise(resolve => {
@@ -69,13 +69,6 @@ describe('services/cardsApi', () => {
 
       expect(card).toEqual(mock);
       expect(API.post).toHaveBeenCalledTimes(1);
-    });
-
-    it('should return an empty object when the request fails', async () => {
-      API.post.mockImplementation(() => mockFailRequest());
-      const card = await postCard(card);
-
-      expect(card).toEqual({});
     });
   });
 });

@@ -1,12 +1,12 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React from 'react';
-import {WBackground} from '../../../global/components/WBackground';
-import {WText} from '../../../global/components/WText';
-import {WTitle} from '../../../global/components/WTitle';
+import {WBackground} from '../../../components/WBackground';
+import {WText} from '../../../components/WText';
+import {WTitle} from '../../../components/WTitle';
 import {RegisterStackParamList} from '../types';
 import {useTheme} from 'styled-components/native';
-import {WCard} from '../../../global/components/WCard';
-import {WButton} from '../../../global/components/WBaseButton';
+import {WCard} from '../../../components/WCard';
+import {WButton} from '../../../components/WButton';
 import {navigate} from '../../../routes/RootNavigation';
 
 type PreviewScreenProps = StackScreenProps<RegisterStackParamList, 'Preview'>;

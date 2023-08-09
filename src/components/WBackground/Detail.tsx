@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './style';
-import Background from '../../../assets/icons/background.svg';
+import Background from '../../assets/icons/background.svg';
 
 type DetailProps = {
   position: string;

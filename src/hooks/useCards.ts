@@ -23,5 +23,5 @@ export const useCards = () => {
     updateCards();
   }, []);
 
-  return {cards, updateCards, loading};
+  return [cards, updateCards, loading];
 };

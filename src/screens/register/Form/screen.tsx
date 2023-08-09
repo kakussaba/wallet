@@ -6,7 +6,7 @@ import {Card} from '../../../services/types';
 import uuid from 'react-native-uuid';
 import {Form} from './Form';
 import {useTheme} from 'styled-components/native';
-import {WHeaderBar} from '../../../global/components/WHeaderBar';
+import {WHeaderBar} from '../../../components/WHeaderBar';
 
 type FormScreenProps = StackScreenProps<RegisterStackParamList, 'Form'>;
 

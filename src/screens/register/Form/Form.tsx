@@ -1,10 +1,10 @@
 import React from 'react';
 import * as S from './style';
 import {Masks} from 'react-native-mask-input';
-import {WBackground} from '../../../global/components/WBackground';
-import {WButton} from '../../../global/components/WBaseButton';
-import {WInput} from '../../../global/components/WInput';
-import {WTitle} from '../../../global/components/WTitle';
+import {WBackground} from '../../../components/WBackground';
+import {WButton} from '../../../components/WButton';
+import {WInput} from '../../../components/WInput';
+import {WTitle} from '../../../components/WTitle';
 import * as yup from 'yup';
 import {Formik} from 'formik';
 import {

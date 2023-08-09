@@ -3,7 +3,7 @@ import {WText} from '../WText';
 import * as S from './style';
 import {WCardProps} from './types';
 import {useTheme} from 'styled-components/native';
-import {obfuscateCreditCard} from '../../utils/formatting';
+import {obfuscateCreditCard} from '../../global/utils/formatting';
 
 export const WCard: React.FC<WCardProps> = ({
   data,
@@ -19,6 +19,7 @@ export const WCard: React.FC<WCardProps> = ({
 
   return (
     <S.Container
+      testID={data.id}
       color={cardColor}
       onPress={onPress}
       disabled={disabled}

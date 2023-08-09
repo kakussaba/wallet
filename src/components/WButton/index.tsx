@@ -31,6 +31,9 @@ export const WButton: React.FC<WButtonProps> = ({
 
   return (
     <S.Container
+      accessible
+      accessibilityHint={text}
+      accessibilityLabel="button"
       color={disabled ? colors.GREY_LIGHT : setBackgroundColor()}
       onPress={onPress}
       disabled={disabled}
