@@ -1,24 +1,27 @@
 import {useCallback, useEffect, useState} from 'react';
 import {getCards} from '../services/cardsApi';
+import {Card} from '../services/types';
 
 export const useCards = () => {
-  const [cards, setCards] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [cards, setCards] = useState<Card[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const updateCards = useCallback(async () => {
     try {
-      const updatedCards = await getCards();
-      setCards(updatedCards);
+      const data = await getCards();
+      setCards(data);
     } catch (error) {
       console.log(error);
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
     }
   }, []);
 
   useEffect(() => {
     updateCards();
-  }, [updateCards]);
+  }, []);
 
   return {cards, updateCards, loading};
 };

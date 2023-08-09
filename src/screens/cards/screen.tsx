@@ -28,7 +28,7 @@ export const CardsScreen: React.FC<CardsScreenProps> = ({navigation}) => {
           onPressLeftIcon={() => navigation.goBack()}
           rightIcon="plus"
           onPressRightIcon={() =>
-            navigation.navigate('Register', {screen: 'Form'})
+            navigation.replace('Register', {screen: 'Form'})
           }
           backgroundColor={colors.WHITE}
         />
