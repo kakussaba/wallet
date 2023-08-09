@@ -8,10 +8,12 @@ export const WButton: React.FC<WButtonProps> = ({
   type,
   text,
   onPress,
-  testID,
   disabled = false,
 }) => {
   const {colors, fontSize} = useTheme();
+
+  const color =
+    type === 'primary' || type === 'tertiary' ? colors.WHITE : colors.BLUE_DARK;
 
   const setBackgroundColor = useCallback(() => {
     switch (type) {
@@ -32,16 +34,10 @@ export const WButton: React.FC<WButtonProps> = ({
       color={disabled ? colors.GREY_LIGHT : setBackgroundColor()}
       onPress={onPress}
       disabled={disabled}
-      testID={testID}>
+      testID={text}>
       <WText
         text={text}
-        color={
-          disabled
-            ? colors.GREY
-            : type === 'primary' || type === 'tertiary'
-            ? colors.WHITE
-            : colors.DARK_BLUE
-        }
+        color={disabled ? colors.GREY : color}
         fontSize={type === 'tertiary' ? fontSize.XSM : fontSize.SM}
         alignment="center"
       />

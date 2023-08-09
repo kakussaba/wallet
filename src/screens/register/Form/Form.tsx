@@ -58,6 +58,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
                   onChangeText={handleChange('number')}
                   onBlur={() => setFieldTouched('number')}
                   full
+                  type="numeric"
                 />
               </S.Container>
               <S.Container>
@@ -79,6 +80,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
                   onChangeText={handleChange('expiration')}
                   onBlur={() => setFieldTouched('expiration')}
                   placeholder="0"
+                  type="numeric"
                 />
                 <WInput
                   testID="cvv"
@@ -88,6 +90,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
                   onChangeText={handleChange('cvv')}
                   onBlur={() => setFieldTouched('cvv')}
                   placeholder="*"
+                  type="numeric"
                 />
               </S.Container>
               <WButton

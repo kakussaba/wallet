@@ -16,12 +16,12 @@ export default {
   },
 
   fontSize: {
-    XS: `${responsive(1.7)}px`,
-    XSM: `${responsive(1.9)}px`,
-    SM: `${responsive(2.1)}px`,
-    XMD: `${responsive(2.4)}px`,
-    MD: `${responsive(2.6)}px`,
-    LG: `${responsive(3.3)}px`,
+    XS: `${responsive(1.7)}px`, //14
+    XSM: `${responsive(1.9)}px`, //16
+    SM: `${responsive(2.1)}px`, //18
+    XMD: `${responsive(2.4)}px`, //20
+    MD: `${responsive(2.6)}px`, //22
+    LG: `${responsive(3.3)}px`, //28
   },
 
   colors: {

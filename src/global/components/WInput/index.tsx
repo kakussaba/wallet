@@ -8,6 +8,7 @@ export const WInput: React.FC<WInputProps> = ({
   value,
   label,
   mask,
+  type = 'default',
   testID,
   full = false,
   placeholder = '',
@@ -30,6 +31,7 @@ export const WInput: React.FC<WInputProps> = ({
         mask={mask}
         placeholderFillCharacter={placeholder}
         onBlur={onBlur}
+        keyboardType={type}
       />
     </S.Container>
   );
