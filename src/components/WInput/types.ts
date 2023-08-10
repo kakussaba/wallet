@@ -5,9 +5,8 @@ export type WInputProps = {
   label: string;
   onChangeText: (value: string) => void;
   onBlur: (e: NativeSyntheticEvent<TextInputFocusEventData>) => void;
-  type?: 'default' | 'numeric';
-  testID: string;
-  mask?: any;
+  maxLength: number;
   full?: boolean;
   placeholder?: string;
+  mask?: 'card' | 'date' | 'number';
 };

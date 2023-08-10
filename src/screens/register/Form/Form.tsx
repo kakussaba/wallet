@@ -1,6 +1,5 @@
 import React from 'react';
 import * as S from './style';
-import {Masks} from 'react-native-mask-input';
 import {WBackground} from '../../../components/WBackground';
 import {WButton} from '../../../components/WButton';
 import {WInput} from '../../../components/WInput';
@@ -47,46 +46,43 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
               <WTitle text="Wallet Test" />
               <S.Container>
                 <WInput
-                  testID="number"
                   value={values.number}
                   label="número do cartão"
-                  mask={Masks.CREDIT_CARD}
                   onChangeText={handleChange('number')}
                   onBlur={() => setFieldTouched('number')}
                   full
-                  type="numeric"
+                  maxLength={18}
+                  mask="card"
                 />
               </S.Container>
               <S.Container>
                 <WInput
-                  testID="name"
                   value={values.name}
                   label="nome do titular do cartão"
                   onChangeText={handleChange('name')}
                   onBlur={() => setFieldTouched('name')}
                   full
+                  maxLength={50}
                 />
               </S.Container>
               <S.Container>
                 <WInput
-                  testID="expiration"
                   value={values.expiration}
                   label="vencimento"
-                  mask={[/^[0-1]$/, /^([0-9]|1[012])$/, '/', /\d/, /\d/]}
                   onChangeText={handleChange('expiration')}
                   onBlur={() => setFieldTouched('expiration')}
-                  placeholder="0"
-                  type="numeric"
+                  placeholder="00/00"
+                  maxLength={5}
+                  mask="date"
                 />
                 <WInput
-                  testID="cvv"
                   value={values.cvv}
                   label="código de segurança"
-                  mask={[/\d/, /\d/, /\d/]}
                   onChangeText={handleChange('cvv')}
                   onBlur={() => setFieldTouched('cvv')}
-                  placeholder="•"
-                  type="numeric"
+                  placeholder="•••"
+                  maxLength={3}
+                  mask="number"
                 />
               </S.Container>
               <WButton

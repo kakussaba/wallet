@@ -3,17 +3,21 @@ import * as S from './style';
 import {WInputProps} from './types';
 import {WText} from '../WText';
 import {useTheme} from 'styled-components/native';
+import {
+  maskCardNumber,
+  maskDate,
+  maskNumber,
+} from '../../global/utils/formatting';
 
 export const WInput: React.FC<WInputProps> = ({
   value,
   label,
-  mask,
-  type = 'default',
-  testID,
   full = false,
   placeholder = '',
   onChangeText,
   onBlur,
+  mask,
+  maxLength,
 }) => {
   const {colors, fontSize} = useTheme();
   const [maskValue, setMaskValue] = useState<string>(value);
@@ -23,17 +27,24 @@ export const WInput: React.FC<WInputProps> = ({
       <WText text={label} fontSize={fontSize.XS} color={colors.GREY} />
       <S.MaskInputContainer
         accessible
-        accessibilityHint={testID}
-        testID={testID}
+        accessibilityHint={label}
+        testID={label}
         value={maskValue}
         onChangeText={unmasked => {
-          setMaskValue(unmasked);
-          onChangeText(unmasked);
+          const masked =
+            mask === 'card'
+              ? maskCardNumber(unmasked)
+              : mask === 'date'
+              ? maskDate(unmasked)
+              : mask === 'number'
+              ? maskNumber(unmasked)
+              : unmasked;
+          setMaskValue(masked);
+          onChangeText(masked);
         }}
-        mask={mask}
-        placeholderFillCharacter={placeholder}
         onBlur={onBlur}
-        keyboardType={type}
+        placeholder={placeholder}
+        maxLength={maxLength}
       />
     </S.Container>
   );

@@ -43,6 +43,7 @@ export const WButton: React.FC<WButtonProps> = ({
         color={disabled ? colors.GREY : color}
         fontSize={type === 'tertiary' ? fontSize.XSM : fontSize.SM}
         alignment="center"
+        noTestID
       />
     </S.Container>
   );

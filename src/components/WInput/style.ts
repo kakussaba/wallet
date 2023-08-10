@@ -1,5 +1,4 @@
 import styled from 'styled-components/native';
-import MaskInput from 'react-native-mask-input';
 
 type ContainerProps = {
   full: boolean;
@@ -9,7 +8,7 @@ export const Container = styled.View<ContainerProps>`
   width: ${props => (props.full ? '100%' : '45%')};
 `;
 
-export const MaskInputContainer = styled(MaskInput)`
+export const MaskInputContainer = styled.TextInput`
   background-color: ${({theme}) => theme.colors.WHITE};
   height: 55px;
   border-radius: 6px;

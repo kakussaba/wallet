@@ -3,4 +3,5 @@ export type WTextProps = {
   fontSize: string;
   text: string;
   alignment?: 'center' | 'left' | 'right';
+  noTestID?: boolean;
 };

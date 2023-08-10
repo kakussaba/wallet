@@ -7,15 +7,20 @@ export const WText: React.FC<WTextProps> = ({
   fontSize,
   text,
   alignment = 'left',
+  noTestID = false,
 }) => {
+  const textProps = {
+    testID: text,
+    accessibilityHint: text,
+  };
+
   return (
     <S.Text
-      testID={text}
       accessible
-      accessibilityHint={text}
       color={color}
       fontSize={fontSize}
-      alignment={alignment}>
+      alignment={alignment}
+      {...(!noTestID && textProps)}>
       {text}
     </S.Text>
   );

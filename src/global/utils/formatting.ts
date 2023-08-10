@@ -7,3 +7,23 @@ export const obfuscateCreditCard = (value: string) => {
 
   return masked?.match(/.{1,4}/g)?.join(' ');
 };
+
+export const maskNumber = (value: string) => {
+  return value.replace(/\D+/g, '');
+};
+
+export const maskCardNumber = (value: string) => {
+  if (value.length === 16) {
+    return maskNumber(value).match(new RegExp('.{1,4}', 'g')).join(' ');
+  }
+
+  return maskNumber(value);
+};
+
+export const maskDate = (value: string) => {
+  if (value.length === 4) {
+    return maskNumber(value).match(new RegExp('.{1,2}', 'g')).join('/');
+  }
+
+  return maskNumber(value);
+};
