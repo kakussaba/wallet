@@ -31,8 +31,11 @@ O projeto foi criado para apresentar um pouco do meu conhecimento sobre desenvol
   ```sh
   $ cd ios && pod install
   ```
+- Substitua o valor da const API_SERVER no arquivo src/api/index.ts pelo seu IP.
+
 - Para iniciar o servidor:
   ```sh
+  $ npm install -g json-server
   $ yarn api
   ```
 - Para build no iOS:
