@@ -8,6 +8,7 @@ import {useTheme} from 'styled-components/native';
 import {WCard} from '../../../components/WCard';
 import {WButton} from '../../../components/WButton';
 import {navigate} from '../../../routes/RootNavigation';
+import * as S from './style';
 
 type PreviewScreenProps = StackScreenProps<RegisterStackParamList, 'Preview'>;
 
@@ -24,7 +25,9 @@ export const PreviewScreen: React.FC<PreviewScreenProps> = ({route}) => {
         fontSize={fontSize.SM}
         alignment="center"
       />
-      <WCard data={params.card} disabled />
+      <S.ContainerCard>
+        <WCard data={params.card} disabled />
+      </S.ContainerCard>
       <WButton
         text="avançar"
         type="primary"

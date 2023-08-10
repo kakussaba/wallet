@@ -5,6 +5,7 @@ import {Card} from './types';
 export const getCards = async () => {
   try {
     const data = await API.get<AxiosResponse<Card[]>>('/cards');
+
     return data.data;
   } catch (error) {
     return [];

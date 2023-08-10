@@ -1,10 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, {useEffect, useRef, useState} from 'react';
 import {WCardListProps} from './types';
-import {Animated} from 'react-native';
+import {Animated, Dimensions} from 'react-native';
 import {WCard} from '../WCard';
 
 const INITIAL_FRONT = 0;
+
+const HEIGHT = Dimensions.get('screen').height;
 
 export const WCardList: React.FC<WCardListProps> = ({
   data,
@@ -12,18 +14,18 @@ export const WCardList: React.FC<WCardListProps> = ({
   onPress,
 }) => {
   const [frontCard, setFrontCard] = useState<number>(0);
-  const frontTranslation = useRef(new Animated.Value(180)).current;
-  const backTranslation = useRef(new Animated.Value(-140)).current;
+  const frontTranslation = useRef(new Animated.Value(HEIGHT * 0.22)).current;
+  const backTranslation = useRef(new Animated.Value(-HEIGHT * 0.09)).current;
 
   useEffect(() => {
     Animated.timing(frontTranslation, {
-      toValue: frontCard === INITIAL_FRONT ? 180 : 110,
+      toValue: frontCard === INITIAL_FRONT ? HEIGHT * 0.22 : HEIGHT * 0.14,
       duration: 1000,
       useNativeDriver: true,
     }).start();
 
     Animated.timing(backTranslation, {
-      toValue: frontCard === INITIAL_FRONT ? -140 : -70,
+      toValue: frontCard === INITIAL_FRONT ? -HEIGHT * 0.09 : HEIGHT * 0,
       duration: 1000,
       useNativeDriver: true,
     }).start();
@@ -32,13 +34,13 @@ export const WCardList: React.FC<WCardListProps> = ({
   useEffect(() => {
     if (cardInUse) {
       Animated.timing(frontTranslation, {
-        toValue: frontCard === INITIAL_FRONT ? 80 : 580,
+        toValue: frontCard === INITIAL_FRONT ? HEIGHT * 0.1 : HEIGHT * 0.67,
         duration: 1000,
         useNativeDriver: true,
       }).start();
 
       Animated.timing(backTranslation, {
-        toValue: frontCard === INITIAL_FRONT ? 320 : -140,
+        toValue: frontCard === INITIAL_FRONT ? HEIGHT * 0.43 : -HEIGHT * 0.12,
         duration: 1000,
         useNativeDriver: true,
       }).start();

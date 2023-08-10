@@ -1,4 +1,6 @@
+import {Platform} from 'react-native';
 import styled from 'styled-components/native';
+import {css} from 'styled-components';
 
 type ContainerProps = {
   backgroundColor?: string;
@@ -6,14 +8,19 @@ type ContainerProps = {
 
 export const Container = styled.View<ContainerProps>`
   background-color: ${props => props.backgroundColor};
-  height: 100px;
+  height: ${Platform.OS === 'ios' ? '120px' : '60px'};
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: 40px 16px 0;
-  shadow-color: ${({theme}) => theme.colors.BLUE_DARK};
-  shadow-offset: -5px 0;
-  shadow-opacity: 0.4;
+  align-items: flex-end;
+  padding-bottom: 20px;
+  ${Platform.OS === 'ios'
+    ? css`
+        box-shadow: 0px -5px 20px rgba(20, 41, 149, 1)
+;
+      `
+    : css`
+    shadow-color: '#142995';
+    elevation: 20;`}
 `;
 
 export const ContainerIcon = styled.View`

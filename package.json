@@ -9,7 +9,7 @@
     "start": "react-native start",
     "test": "jest --watch --coverage=false",
     "finalTest": "jest",
-    "api": "json-server --watch db.json"
+    "api": "json-server --host 192.168.0.151 --watch db.json"
   },
   "dependencies": {
     "@react-navigation/native": "^6.1.7",
