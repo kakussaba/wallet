@@ -9,7 +9,13 @@ export const WText: React.FC<WTextProps> = ({
   alignment = 'left',
 }) => {
   return (
-    <S.Text color={color} fontSize={fontSize} alignment={alignment}>
+    <S.Text
+      testID={text}
+      accessible
+      accessibilityHint={text}
+      color={color}
+      fontSize={fontSize}
+      alignment={alignment}>
       {text}
     </S.Text>
   );
