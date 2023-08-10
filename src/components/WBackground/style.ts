@@ -17,5 +17,6 @@ export const BackgroundContainer = styled.View<BackgroundContainerProps>`
   top: ${props => props.position === 'top' && 0};
   bottom: ${props => props.position === 'bottom' && 0};
   right: ${props => props.position === 'bottom' && 0};
-  transform: ${props => props.position === 'bottom' && css `rotate(180deg)`}
+  transform: ${props => props.position === 'bottom' && css `rotate(180deg)`};
+  z-index: -1;
 `;
