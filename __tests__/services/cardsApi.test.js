@@ -1,74 +1,54 @@
 import {API} from '../../src/api';
-import {getCards, postCard} from '../../src/services/cardsApi';
-
-jest.mock('../../src/api/index');
-
-const mockSuccessRequest = result => {
-  return new Promise(resolve => {
-    resolve({
-      data: result,
-    });
-  });
-};
-
-const mockFailRequest = () => {
-  return new Promise(_, reject => {
-    reject();
-  });
-};
+import {service} from '../../src/services/cardsApi';
+import {card} from './mocks';
 
 describe('services/cardsApi', () => {
   beforeEach(() => {
-    API.get.mockClear();
+    jest.spyOn(API, 'get').mockClear();
   });
-
   describe('getCards', () => {
-    const mock = [
-      {
-        id: '3302a0a5-88c1-4100-a28d-726bbd414679',
-        type: 0,
-        number: '3443 4343 4343 4343',
-        name: '434343434',
-        expiration: '43/43',
-        cvv: '343',
-      },
-    ];
-
     it('should be return a card list', async () => {
-      API.get.mockImplementation(() => mockSuccessRequest(mock));
-      const cards = await getCards();
+      const spyFn = jest
+        .spyOn(API, 'get')
+        .mockImplementation(() => Promise.resolve({data: [card]}));
+      const cards = await service.getCards();
 
-      expect(cards).toEqual(mock);
-      expect(API.get).toHaveBeenCalledWith('/cards');
-      expect(API.get).toHaveBeenCalledTimes(1);
+      expect(cards).toEqual([card]);
+      expect(spyFn).toBeCalledTimes(1);
     });
 
-    it('should return an empty list when the request fails', async () => {
-      API.get.mockImplementation(() => mockFailRequest());
-      const cards = await getCards();
+    it('should be return a empty list when API calls failed', async () => {
+      const spyFn = jest
+        .spyOn(API, 'get')
+        .mockImplementation(() => Promise.reject());
+      const cards = await service.getCards();
 
       expect(cards).toEqual([]);
-      expect(API.get).toHaveBeenCalledWith('/cards');
-      expect(API.get).toHaveBeenCalledTimes(1);
+      expect(spyFn).toBeCalledTimes(1);
     });
   });
 
   describe('postCard', () => {
-    const mock = {
-      id: '3302a0a5-88c1-4100-a28d-726bbd414679',
-      type: 0,
-      number: '3443 4343 4343 4343',
-      name: '434343434',
-      expiration: '43/43',
-      cvv: '343',
-    };
-
     it('should be register a new card and return a object', async () => {
-      API.post.mockImplementation(() => mockSuccessRequest(mock));
-      const card = await postCard(card);
+      const spyFn = jest
+        .spyOn(API, 'post')
+        .mockImplementation(() => Promise.resolve({data: card}));
 
-      expect(card).toEqual(mock);
-      expect(API.post).toHaveBeenCalledTimes(1);
+      const newCard = await service.postCard(card);
+
+      expect(newCard).toEqual(card);
+      expect(spyFn).toHaveBeenCalledTimes(1);
+    });
+
+    it('should be return error when API calls failed', async () => {
+      const spyFn = jest
+        .spyOn(API, 'post')
+        .mockImplementation(() => Promise.reject());
+
+      const newCard = await service.postCard(card);
+
+      expect(newCard).toEqual(null);
+      expect(spyFn).toHaveBeenCalledTimes(1);
     });
   });
 });

@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useState} from 'react';
-import {getCards} from '../services/cardsApi';
+import {service} from '../services/cardsApi';
 import {Card} from '../services/types';
 
 export const useCards = () => {
@@ -8,7 +8,7 @@ export const useCards = () => {
 
   const updateCards = useCallback(async () => {
     try {
-      const data = await getCards();
+      const data = await service.getCards();
       setCards(data);
     } catch (error) {
       console.log(error);

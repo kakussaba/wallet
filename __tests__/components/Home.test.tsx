@@ -16,13 +16,14 @@ describe('Home', () => {
     beforeEach(() => {
       props = createTestProps({});
     });
-    it('show the buttons', () => {
+    it('show the components', () => {
       const {getByTestId} = render(
         <ThemeProvider theme={theme}>
           <HomeScreen {...props} />
         </ThemeProvider>,
       );
 
+      expect(getByTestId('Wallet Test')).toBeTruthy();
       expect(getByTestId('meus cartões')).toBeTruthy();
       expect(getByTestId('cadastrar cartão')).toBeTruthy();
     });

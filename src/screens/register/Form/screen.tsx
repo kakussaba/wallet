@@ -1,12 +1,12 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import React, {useEffect} from 'react';
 import {RegisterStackParamList} from '../types';
-import {postCard} from '../../../services/cardsApi';
 import {Card} from '../../../services/types';
 import uuid from 'react-native-uuid';
 import {Form} from './Form';
 import {useTheme} from 'styled-components/native';
 import {WHeaderBar} from '../../../components/WHeaderBar';
+import {service} from '../../../services/cardsApi';
 
 type FormScreenProps = StackScreenProps<RegisterStackParamList, 'Form'>;
 
@@ -35,7 +35,7 @@ export const FormScreen: React.FC<FormScreenProps> = ({navigation}) => {
         type: Math.random() < 0.5 ? 0 : 1,
         ...values,
       };
-      const data = await postCard(card);
+      const data = await service.postCard(card);
       navigate('Register', {screen: 'Preview', params: {card: data}});
     } catch (error) {
       console.log(error);

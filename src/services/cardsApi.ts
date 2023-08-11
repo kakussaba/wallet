@@ -1,22 +1,22 @@
 import {API} from '../api/index';
-import {AxiosResponse} from 'axios';
 import {Card} from './types';
 
-export const getCards = async () => {
+async function getCards(): Promise<Card[] | []> {
   try {
-    const data = await API.get<AxiosResponse<Card[]>>('/cards');
-
-    return data.data;
-  } catch (error) {
+    const {data} = await API.get('/cards');
+    return data;
+  } catch (err) {
     return [];
   }
-};
+}
 
-export const postCard = async (card: Card) => {
+async function postCard(card: Card): Promise<Card | null> {
   try {
-    const data = await API.post<AxiosResponse<Card>>('/cards', card);
-    return data.data;
-  } catch (error) {
-    return {};
+    const {data} = await API.post<Card>('/cards', card);
+    return data;
+  } catch (err) {
+    return null;
   }
-};
+}
+
+export const service = {getCards, postCard};
