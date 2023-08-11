@@ -15,3 +15,5 @@ export const card2 = {
   expiration: '11/11',
   cvv: '111',
 };
+
+export const error = {message: 'Card Error'};

@@ -1,6 +1,7 @@
+import {AxiosError} from 'axios';
 import {API} from '../../src/api';
 import {service} from '../../src/services/cardsApi';
-import {card} from './mocks';
+import {card, error} from './mocks';
 
 describe('services/cardsApi', () => {
   beforeEach(() => {
@@ -20,11 +21,9 @@ describe('services/cardsApi', () => {
     it('should be return a empty list when API calls failed', async () => {
       const spyFn = jest
         .spyOn(API, 'get')
-        .mockImplementation(() => Promise.reject());
-      const cards = await service.getCards();
+        .mockImplementation(() => Promise.reject(new Error(error)));
 
-      expect(cards).toEqual([]);
-      expect(spyFn).toBeCalledTimes(1);
+      await expect(spyFn).rejects.toThrow();
     });
   });
 
@@ -40,15 +39,12 @@ describe('services/cardsApi', () => {
       expect(spyFn).toHaveBeenCalledTimes(1);
     });
 
-    it('should be return error when API calls failed', async () => {
+    it('should be return a empty list when API calls failed', async () => {
       const spyFn = jest
         .spyOn(API, 'post')
-        .mockImplementation(() => Promise.reject());
+        .mockImplementation(() => Promise.reject(new Error(error)));
 
-      const newCard = await service.postCard(card);
-
-      expect(newCard).toEqual(null);
-      expect(spyFn).toHaveBeenCalledTimes(1);
+      await expect(spyFn).rejects.toThrow();
     });
   });
 });

@@ -6,7 +6,7 @@ async function getCards(): Promise<Card[] | []> {
     const {data} = await API.get('/cards');
     return data;
   } catch (err) {
-    return [];
+    throw err;
   }
 }
 
@@ -15,7 +15,7 @@ async function postCard(card: Card): Promise<Card | null> {
     const {data} = await API.post<Card>('/cards', card);
     return data;
   } catch (err) {
-    return null;
+    throw err;
   }
 }
 

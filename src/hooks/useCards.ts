@@ -11,7 +11,7 @@ export const useCards = () => {
       const data = await service.getCards();
       setCards(data);
     } catch (error) {
-      console.log(error);
+      setCards([]);
     } finally {
       setTimeout(() => {
         setLoading(false);

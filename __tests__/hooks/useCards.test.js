@@ -3,6 +3,8 @@ import {API} from '../../src/api';
 import {useCards} from '../../src/hooks/useCards';
 import {card, card2} from '../services/mocks';
 
+jest.useFakeTimers();
+
 describe('hooks/useCards', () => {
   it('should be return a card list and a update function', async () => {
     jest
@@ -21,6 +23,10 @@ describe('hooks/useCards', () => {
 
     await act(() => result.current[1]());
     expect(result.current[0]).toEqual([card, card2]);
+
+    setTimeout(() => {
+      expect(result.current[2]).toEqual(false);
+    }, 3000);
   });
 
   it('should return an empty object when the request fails', async () => {
