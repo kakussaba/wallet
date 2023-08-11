@@ -9,4 +9,5 @@ export type WInputProps = {
   full?: boolean;
   placeholder?: string;
   mask?: 'card' | 'date' | 'number';
+  testID: string;
 };

@@ -18,17 +18,18 @@ export const WInput: React.FC<WInputProps> = ({
   onBlur,
   mask,
   maxLength,
+  testID,
 }) => {
   const {colors, fontSize} = useTheme();
   const [maskValue, setMaskValue] = useState<string>(value);
 
   return (
     <S.Container full={full}>
-      <WText text={label} fontSize={fontSize.XS} color={colors.GREY} />
+      <WText text={label} fontSize={fontSize.XS} color={colors.GREY} noTestID />
       <S.MaskInputContainer
         accessible
         accessibilityHint={label}
-        testID={label}
+        testID={testID}
         value={maskValue}
         onChangeText={unmasked => {
           const masked =

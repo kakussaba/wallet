@@ -20,6 +20,9 @@ export const WLoading: React.FC<WLoadingProps> = ({}) => {
 
   return (
     <S.Container
+      testID="loading"
+      accessible
+      accessibilityHint="loading"
       style={{
         transform: [
           {

@@ -46,6 +46,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
               <WTitle text="Wallet Test" />
               <S.Container>
                 <WInput
+                  testID="number"
                   value={values.number}
                   label="número do cartão"
                   onChangeText={handleChange('number')}
@@ -57,6 +58,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
               </S.Container>
               <S.Container>
                 <WInput
+                  testID="name"
                   value={values.name}
                   label="nome do titular do cartão"
                   onChangeText={handleChange('name')}
@@ -67,6 +69,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
               </S.Container>
               <S.Container>
                 <WInput
+                  testID="expiration"
                   value={values.expiration}
                   label="vencimento"
                   onChangeText={handleChange('expiration')}
@@ -76,6 +79,7 @@ export const Form: React.FC<{onSubmit: (values: Card) => void}> = ({
                   mask="date"
                 />
                 <WInput
+                  testID="cvv"
                   value={values.cvv}
                   label="código de segurança"
                   onChangeText={handleChange('cvv')}
